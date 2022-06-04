@@ -22,6 +22,7 @@ body {
 .conclusion {
     width: 300px;
     height: 70px;
+    display: flex;
     margin-bottom: 10px;
     background-color: #fff;
 }
