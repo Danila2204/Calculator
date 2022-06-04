@@ -1,0 +1,73 @@
+/* normalize */
+body {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+/* / normalize */
+/* calculate */
+.calculate {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid;
+    background-color: #eee;
+}
+
+.conclusion {
+    width: 300px;
+    height: 70px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.input {
+    display: flex;
+}
+
+.signs {
+    display: flex;
+    flex-direction: column;
+}
+
+.number, .sign, .equally {
+    cursor: pointer;
+}
+
+.number, .sign {
+    width: 50px;
+    height: 25px;
+    margin: 0 10px 10px;
+}
+
+.number, .equally {
+    border: 1px solid #fff;
+    border-radius: 0;
+    background-color: #fff;
+}
+
+.plus {
+    border: 1px solid rgb(250, 127, 0);
+    background-color: rgb(250, 127, 0);
+}
+
+.minus {
+    border: 1px solid rgb(252, 150, 49);
+    background-color: rgb(252, 150, 49);
+}
+
+.division {
+    border: 1px solid rgb(253, 158, 63);
+    background-color: rgb(253, 158, 63);
+}
+
+.multiplication {
+    border: 1px solid rgb(255, 194, 132);
+    background-color: rgb(255, 194, 132);
+}
+/* / calculate */
