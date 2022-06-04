@@ -4,6 +4,10 @@ const signs = document.querySelectorAll(".sign");
 
 let dot = false;
 
+let firstNumber;
+let secondNumber;
+let result;
+
 for (let i = 0; i < numbers.length; i++) {
     numbers[i].addEventListener("click", () => {
         if (numbers[i].textContent === ".") {
@@ -22,7 +26,7 @@ for (let i = 0; i < numbers.length; i++) {
             console.log("Цикл пройден!")
 
         } else {
-            const firstNumber = numbers[i].textContent;
+            firstNumber = numbers[i].textContent;
             conclusion.textContent += firstNumber;
         }
     });
@@ -31,9 +35,29 @@ for (let i = 0; i < numbers.length; i++) {
 for (let i = 0; i < signs.length; i++) {
     signs[i].addEventListener("click", () => {
         if (signs[i].textContent === "=") {
-        } else if (signs[i].textContent === "+") {
-        } else if (signs[i].textContent === "-") {
-        } else if (signs[i].textContent === "*") {
-        } else if (signs[i].textContent === "/") {}
-    })
+            conclusion.textContent = "";
+            conclusion.textContent += result;
+        } else {
+            firstNumber = Number(conclusion.textContent);
+            conclusion.textContent = "";
+            conclusion.textContent += signs[i].textContent;
+
+            for (let i = 0; i < numbers.length; i++) {
+                numbers[i].addEventListener("click", () => {
+                    secondNumber = Number(numbers[i].textContent);
+                    conclusion.textContent = "";
+                    conclusion.textContent += secondNumber;
+                });
+            }
+            if (signs[i].textContent === "+") {
+                result = parseInt(firstNumber) + secondNumber;
+            } else if (signs[i].textContent === "-") {
+                result = firstNumber - secondNumber;
+            } else if (signs[i].textContent === "*") {
+                result = firstNumber * secondNumber;
+            } else if (signs[i].textContent === "/") {
+                result = firstNumber / secondNumber;
+            }}
+        }
+    )
 }
