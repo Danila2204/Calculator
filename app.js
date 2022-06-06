@@ -36,25 +36,24 @@ for (let i = 0; i < numbers.length; i++) {
                 conclusion.textContent += secondNumber;
 
                 if (value === "+") {
-                // secondNumber = Number(numbers[i].textContent);
-                // conclusion.textContent = "";
-                // conclusion.textContent += secondNumber;
+                    secondNumber = Number(numbers[i].textContent);
+                    conclusion.textContent = "";
+                    conclusion.textContent += secondNumber;
                     result = firstNumber + secondNumber;
                 } else if (value === "-") {
-                // secondNumber = Number(numbers[i].textContent);
-                // conclusion.textContent = "";
-                // conclusion.textContent += secondNumber;
+                    secondNumber = Number(numbers[i].textContent);
+                    conclusion.textContent = "";
+                    conclusion.textContent += secondNumber;
                     result = firstNumber - secondNumber;
                 } else if (value.textContent === "*") {
-                // secondNumber = Number(numbers[i].textContent);
-                // conclusion.textContent = "";
-                // conclusion.textContent += secondNumber;
+                    secondNumber = Number(numbers[i].textContent);
+                    conclusion.textContent = "";
+                    conclusion.textContent += secondNumber;
                     result = firstNumber * secondNumber;
                 } else if (value.textContent === "/") {
-                // secondNumber = Number(numbers[i].textContent);
-                // conclusion.textContent = "";
-                // conclusion.textContent += secondNumber;
-                
+                    secondNumber = Number(numbers[i].textContent);
+                    conclusion.textContent = "";
+                    conclusion.textContent += secondNumber;
                     result = firstNumber / secondNumber;
                 }
             }
