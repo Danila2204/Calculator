@@ -3,9 +3,12 @@ const numbers = document.querySelectorAll(".number");
 const signs = document.querySelectorAll(".sign");
 
 let dot = false;
+let sign = false;
+let quelly = false;
 
 let firstNumber;
 let secondNumber;
+let value;
 let result;
 
 for (let i = 0; i < numbers.length; i++) {
@@ -22,42 +25,60 @@ for (let i = 0; i < numbers.length; i++) {
                     }
                 }
             }
-            
-            console.log("Цикл пройден!")
-
+        
         } else {
-            firstNumber = numbers[i].textContent;
-            conclusion.textContent += firstNumber;
+            if (sign === false) {
+                firstNumber = numbers[i].textContent;
+                conclusion.textContent += firstNumber;
+            } else {
+                conclusion.textContent = "";
+                secondNumber = numbers[i].textContent;
+                conclusion.textContent += secondNumber;
+
+                if (value === "+") {
+                // secondNumber = Number(numbers[i].textContent);
+                // conclusion.textContent = "";
+                // conclusion.textContent += secondNumber;
+                    result = firstNumber + secondNumber;
+                } else if (value === "-") {
+                // secondNumber = Number(numbers[i].textContent);
+                // conclusion.textContent = "";
+                // conclusion.textContent += secondNumber;
+                    result = firstNumber - secondNumber;
+                } else if (value.textContent === "*") {
+                // secondNumber = Number(numbers[i].textContent);
+                // conclusion.textContent = "";
+                // conclusion.textContent += secondNumber;
+                    result = firstNumber * secondNumber;
+                } else if (value.textContent === "/") {
+                // secondNumber = Number(numbers[i].textContent);
+                // conclusion.textContent = "";
+                // conclusion.textContent += secondNumber;
+                
+                    result = firstNumber / secondNumber;
+                }
+            }
         }
     });
 }
 
+
 for (let i = 0; i < signs.length; i++) {
     signs[i].addEventListener("click", () => {
+        
         if (signs[i].textContent === "=") {
+            quelly = true;
+            sign = false;
+            secondNumber = Number(conclusion.textContent);
             conclusion.textContent = "";
             conclusion.textContent += result;
-        } else {
+
+        } else if (signs[i].textContent !== "=" && sign === false) {
+            value = signs[i].textContent;
+            sign = true;
             firstNumber = Number(conclusion.textContent);
             conclusion.textContent = "";
             conclusion.textContent += signs[i].textContent;
-
-            for (let i = 0; i < numbers.length; i++) {
-                numbers[i].addEventListener("click", () => {
-                    secondNumber = Number(numbers[i].textContent);
-                    conclusion.textContent = "";
-                    conclusion.textContent += secondNumber;
-                });
-            }
-            if (signs[i].textContent === "+") {
-                result = parseInt(firstNumber) + secondNumber;
-            } else if (signs[i].textContent === "-") {
-                result = firstNumber - secondNumber;
-            } else if (signs[i].textContent === "*") {
-                result = firstNumber * secondNumber;
-            } else if (signs[i].textContent === "/") {
-                result = firstNumber / secondNumber;
-            }}
         }
-    )
+    })
 }
