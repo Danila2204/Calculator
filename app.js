@@ -5,6 +5,7 @@ const signs = document.querySelectorAll(".sign");
 let dot = false;
 let sign = false;
 let quelly = false;
+let clear = false;
 
 let firstNumber;
 let secondNumber;
@@ -31,29 +32,25 @@ for (let i = 0; i < numbers.length; i++) {
                 firstNumber = numbers[i].textContent;
                 conclusion.textContent += firstNumber;
             } else {
-                conclusion.textContent = "";
+                if (clear === false) {
+                    conclusion.textContent = "";
+                    clear = true;
+                }
+
                 secondNumber = numbers[i].textContent;
                 conclusion.textContent += secondNumber;
 
                 if (value === "+") {
-                    secondNumber = Number(numbers[i].textContent);
-                    conclusion.textContent = "";
-                    conclusion.textContent += secondNumber;
+                    secondNumber = Number(conclusion.textContent);
                     result = firstNumber + secondNumber;
                 } else if (value === "-") {
-                    secondNumber = Number(numbers[i].textContent);
-                    conclusion.textContent = "";
-                    conclusion.textContent += secondNumber;
+                    secondNumber = Number(conclusion.textContent);
                     result = firstNumber - secondNumber;
                 } else if (value === "*") {
-                    secondNumber = Number(numbers[i].textContent);
-                    conclusion.textContent = "";
-                    conclusion.textContent += secondNumber;
+                    secondNumber = Number(conclusion.textContent);
                     result = firstNumber * secondNumber;
                 } else if (value === "/") {
-                    secondNumber = Number(numbers[i].textContent);
-                    conclusion.textContent = "";
-                    conclusion.textContent += secondNumber;
+                    secondNumber = Number(conclusion.textContent);
                     result = firstNumber / secondNumber;
                 }
             }
