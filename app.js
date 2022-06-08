@@ -45,12 +45,12 @@ for (let i = 0; i < numbers.length; i++) {
                     conclusion.textContent = "";
                     conclusion.textContent += secondNumber;
                     result = firstNumber - secondNumber;
-                } else if (value.textContent === "*") {
+                } else if (value === "*") {
                     secondNumber = Number(numbers[i].textContent);
                     conclusion.textContent = "";
                     conclusion.textContent += secondNumber;
                     result = firstNumber * secondNumber;
-                } else if (value.textContent === "/") {
+                } else if (value === "/") {
                     secondNumber = Number(numbers[i].textContent);
                     conclusion.textContent = "";
                     conclusion.textContent += secondNumber;
