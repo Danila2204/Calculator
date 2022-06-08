@@ -37,6 +37,7 @@ for (let i = 0; i < numbers.length; i++) {
                     clear = true;
                 }
 
+                dot = false;
                 secondNumber = numbers[i].textContent;
                 conclusion.textContent += secondNumber;
 
