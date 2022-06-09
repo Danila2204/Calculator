@@ -1,6 +1,7 @@
 const conclusion = document.querySelector(".conclusion");
 const numbers = document.querySelectorAll(".number");
 const signs = document.querySelectorAll(".sign");
+const cleaner = document.querySelector(".clear");
 
 let dot = false;
 let sign = false;
@@ -79,3 +80,11 @@ for (let i = 0; i < signs.length; i++) {
         }
     })
 }
+
+cleaner.addEventListener("click", () => {
+    conclusion.textContent = "";
+    dot = false;
+    sign = false;
+    quelly = false;
+    clear = false;
+})
