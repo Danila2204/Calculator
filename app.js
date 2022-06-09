@@ -10,6 +10,7 @@ let clear = false;
 
 let firstNumber;
 let secondNumber;
+let anyNumber;
 let value;
 let result;
 
@@ -32,6 +33,30 @@ for (let i = 0; i < numbers.length; i++) {
             if (sign === false) {
                 firstNumber = numbers[i].textContent;
                 conclusion.textContent += firstNumber;
+            } else if (quelly === true && sign === false) {
+                firstNumber = result;
+                if (clear === false) {
+                    conclusion.textContent = "";
+                    clear = true;
+                }
+
+                dot = false;
+                secondNumber = numbers[i].textContent;
+                conclusion.textContent += secondNumber;
+                
+                if (value === "+") {
+                    secondNumber = Number(conclusion.textContent);
+                    result = firstNumber + secondNumber;
+                } else if (value === "-") {
+                    secondNumber = Number(conclusion.textContent);
+                    result = firstNumber - secondNumber;
+                } else if (value === "*") {
+                    secondNumber = Number(conclusion.textContent);
+                    result = firstNumber * secondNumber;
+                } else if (value === "/") {
+                    secondNumber = Number(conclusion.textContent);
+                    result = firstNumber / secondNumber;
+                }
             } else {
                 if (clear === false) {
                     conclusion.textContent = "";
@@ -67,6 +92,7 @@ for (let i = 0; i < signs.length; i++) {
         if (signs[i].textContent === "=") {
             quelly = true;
             sign = false;
+            clear = false;
             secondNumber = Number(conclusion.textContent);
             conclusion.textContent = "";
             conclusion.textContent += result;
