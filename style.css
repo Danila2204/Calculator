@@ -82,4 +82,8 @@ body {
 .equally {
     width: 98%;
 }
+
+.error {
+    color: #f00;
+}
 /* / calculate */

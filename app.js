@@ -7,6 +7,7 @@ let dot = false;
 let sign = false;
 let quelly = false;
 let clear = false;
+let errors = 0;
 
 let firstNumber;
 let secondNumber;
@@ -78,7 +79,32 @@ for (let i = 0; i < numbers.length; i++) {
                     result = firstNumber * secondNumber;
                 } else if (value === "/") {
                     secondNumber = Number(conclusion.textContent);
-                    result = firstNumber / secondNumber;
+                    if (secondNumber === 0) {
+                        conclusion.classList.add("error");
+                        if (errors === 0) {
+                            result = new Error("Не дели на ноль блин! (ещё раз поделишь тоби звизда). Всё очистится автоматически через 3 секунды.");
+                            setTimeout(() => {
+                                conclusion.textContent = "";
+                                dot = false;
+                                sign = false;
+                                quelly = false;
+                                clear = false;
+                            }, 3000)
+                            errors++;
+                        } else {
+                            result = new Error("Ты дурак? Всё очистится автоматически через 3 секунды.");
+                            setTimeout(() => {
+                                conclusion.textContent = "";
+                                dot = false;
+                                sign = false;
+                                quelly = false;
+                                clear = false;
+                            }, 3000)
+                        }
+                    } else {
+                        conclusion.classList.remove("error");
+                        result = firstNumber / secondNumber;
+                    }
                 }
             }
         }
